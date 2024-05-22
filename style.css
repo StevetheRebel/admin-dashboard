@@ -201,17 +201,17 @@ aside .logo-ctn {
   color: var(--blue-light);
 }
 
-aside nav {
+aside .navigation {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-aside nav ul {
+aside .navigation ul {
   margin-left: 1rem;
 }
 
-nav ul li {
+.navigation ul li {
   padding: 0.5rem 0;
   color: var(--blue-light);
   display: flex;
@@ -221,13 +221,17 @@ nav ul li {
   border-radius: 1rem;
 }
 
-nav ul li:hover {
+.navigation ul li:hover {
   background-color: var(--blue-dark);
   cursor: pointer;
 }
 
 ul li i {
   margin: 0 0.5rem;
+}
+
+aside a .bx-chevrons-down {
+  display: none;
 }
 
 /* Main area styling */
@@ -258,37 +262,27 @@ main .projects .projects-ctn {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
   gap: 1rem;
 }
 
 .projects-ctn .project1 {
   grid-area: 1 / 1 / 3 / 3;
   background-color: var(--pri-white);
-  box-shadow: 15px 0 0 var(--accent-brown) inset;
-  border-radius: 0 1.5rem 1.5rem 0;
 }
 
 .projects-ctn .project2 {
   grid-area: 1 / 3 / 3 / 5;
   background-color: var(--pri-white);
-  box-shadow: 15px 0 0 var(--accent-brown) inset;
-  border-radius: 0 1.5rem 1.5rem 0;
 }
 
 .projects-ctn .project3 {
   grid-area: 3 / 1 / 5 / 3;
   background-color: var(--pri-white);
-  box-shadow: 15px 0 0 var(--accent-brown) inset;
-  border-radius: 0 1.5rem 1.5rem 0;
 }
 
 .projects-ctn .project4 {
   grid-area: 3 / 3 / 5 / 5;
   background-color: var(--pri-white);
-  box-shadow: 15px 0 0 var(--accent-brown) inset;
-  border-radius: 0 1.5rem 1.5rem 0;
 }
 
 .project {
@@ -296,6 +290,8 @@ main .projects .projects-ctn {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 15px 0 0 var(--accent-brown) inset;
+  border-radius: 0 1.5rem 1.5rem 0;
 }
 
 .project .project-links {
@@ -338,10 +334,11 @@ main .other-info {
   grid-area: 1 / 1 / 3 / 2;
   width: 100%;
   padding: 1rem;
+  height: fit-content;
 }
 
 .announcement .announcement-ctn {
-  width: 60%;
+  width: 50%;
   height: 80%;
   border: 1px solid;
   padding: 1rem 0.5rem;
@@ -403,4 +400,343 @@ main .other-info {
 
 .trend4 .img-ctn {
   background-color: rgb(0, 255, 255);
+}
+
+@media (768px <= width <= 1024px) {
+  body {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  header {
+    grid-area: 1 / 2 / 2 / 5;
+  }
+
+  .img-ctn {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .img-ctn img {
+    width: 1.5rem;
+  }
+
+  .profile-info .profile-name {
+    margin-left: 0.5rem;
+  }
+
+  .profile-info .profile-name p {
+    font-size: 0.75rem;
+  }
+
+  .profile-info .profile-name h3 {
+    font-size: 0.95rem;
+  }
+
+  .btn-ctn button {
+    width: 4rem;
+    border-radius: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .btn-ctn button .bx {
+    font-size: 1rem;
+  }
+
+  aside {
+    grid-area: 1 / 1 / 6 / 2;
+  }
+
+  .logo-ctn img {
+    width: 2rem;
+  }
+
+  main {
+    grid-area: 2 / 2 / 6 / 5;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  main .projects {
+    grid-area: 1 / 1 / 3 / 4;
+  }
+
+  main .projects h3 {
+    font-size: 1.15rem;
+  }
+
+  main .projects .projects-ctn {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .projects-ctn .project1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .projects-ctn .project2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .projects-ctn .project3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .projects-ctn .project4 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .project {
+    height: 70%;
+  }
+
+  .project p {
+    font-size: 0.75rem;
+  }
+
+  .project .project-links {
+    width: 80%;
+  }
+
+  .project-links .bx {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  main .other-info {
+    grid-area: 1 / 4 / 3 / 5;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .other-info h3 {
+    font-size: 1.15rem;
+  }
+
+  .other-info .announcement {
+    grid-area: 1 / 1 / 2 / 2;
+    height: fit-content;
+  }
+
+  .announcement .announcement-ctn {
+    width: 90%;
+  }
+
+  .other-info .trending {
+    grid-area: 2 / 1 / 3 / 2;
+    height: 60%;
+  }
+
+  .other-info .trending-ctn {
+    width: 100%;
+  }
+
+  .trending-ctn .trend {
+    gap: 0.5rem;
+  }
+
+  .trend-name h4 {
+    font-size: 0.75rem;
+  }
+
+  .trend-name p {
+    font-size: 0.5rem;
+  }
+}
+
+@media (320px <= width <= 480px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 0;
+  }
+
+  header {
+    grid-area: 2 / 1 / 4 / 3;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    gap: 0.5rem;
+  }
+
+  header .search-ctn {
+    height: 30%;
+  }
+
+  .search-ctn .input-ctn {
+    width: 100%;
+  }
+
+  .input-ctn input {
+    width: 78%;
+  }
+
+  .search-ctn .handle-display {
+    display: none;
+  }
+
+  header .handle-info {
+    height: 60%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .handle-info .profile-info {
+    width: 100%;
+    height: 60%;
+  }
+
+  .handle-info .btn-ctn {
+    width: 100%;
+    height: 40%;
+  }
+
+  aside {
+    grid-area: 1 / 1 / 2 / 3;
+    height: 5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+
+  aside .logo-ctn {
+    margin: 0;
+  }
+
+  aside .navigation {
+    display: none;
+    width: 100%;
+    top: 4.9rem;
+    position: absolute;
+    background-color: var(--pri-blue);
+    height: calc(100dvh - 4.9rem);
+    z-index: 2;
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 1rem;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  aside .bx-chevrons-down {
+    display: block;
+    font-size: 3rem;
+    color: var(--blue-dark);
+    margin-right: 1rem;
+    border-radius: 50%;
+  }
+
+  aside .bx-chevrons-down:hover {
+    background-color: var(--blue-dark);
+    color: var(--blue-light);
+    transition: background 0.3s ease-in-out;
+  }
+
+  aside .bx-chevrons-down.active {
+    background-color: var(--blue-dark);
+    color: var(--blue-light);
+  }
+
+  main {
+    grid-area: 4 / 1 / 9 / 3;
+    display: none;
+  }
+
+  aside .navigation ul li {
+    width: 12rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
+  }
+
+  aside .navigation ul li:hover {
+    background-color: var(--blue-dark);
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+  }
+
+  main {
+    grid-area: 4 / 1 / 9 / 3;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  main .projects {
+    grid-area: 1 / 1 / 6 / 3;
+  }
+
+  main .projects .projects-ctn {
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .projects-ctn .project1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .projects-ctn .project2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .projects-ctn .project3 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  .projects-ctn .project4 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  main .other-info {
+    grid-area: 6 / 1 / 9 / 3;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .other-info .announcement {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .announcement .announcement-ctn {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .announcement-ctn h4 {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .announcement-ctn p {
+    font-size: 1rem;
+  }
+
+  .other-info .trending {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .trending .trending-ctn {
+    width: 100%;
+  }
 }
